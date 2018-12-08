@@ -21,11 +21,11 @@ export class PostDetailPage extends Component {
       title: this.props.post.title,
       content: this.props.post.content,
     };
-  };
+  }
 
   handleInputChange = (event) => {
     const { value, name } = event.target;
-  
+
     this.setState({
       [name]: value,
     });
