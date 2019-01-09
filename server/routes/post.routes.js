@@ -14,6 +14,9 @@ router.route('/posts').post(PostController.addPost);
 // Update a post bu cuid
 router.route('/posts/:cuid').put(PostController.editPost);
 
+// Update a vote bu cuid
+router.route('/posts/:cuid').put(PostController.editVote);
+
 // Delete a post by cuid
 router.route('/posts/:cuid').delete(PostController.deletePost);
 

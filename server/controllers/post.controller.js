@@ -56,6 +56,16 @@ export function editPost(req, res) {
   });
 }
 
+export function editVote(req, res) {
+  Post.update({ cuid: req.params.cuid }, req.body.votes).exec((err, votes) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+
+    res.json({ votes });
+  });
+}
+
 /**
  * Get a single post
  * @param req
