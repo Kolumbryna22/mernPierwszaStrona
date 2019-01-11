@@ -48,7 +48,6 @@ export function addPosts(posts) {
 }
 
 export function thumbUp(cuid) {
-  console.log('thumbUp');
   return {
     type: THUMB_UP,
     cuid,
@@ -88,6 +87,18 @@ export function deletePost(cuid) {
   return {
     type: DELETE_POST,
     cuid,
+  };
+}
+
+export function thumbUpPostRequest(cuid) {
+  return (dispatch) => {
+    return callApi(`posts/${cuid}`, 'thumbUp').then(() => dispatch(thumbUp(cuid)));
+  };
+}
+
+export function thumbDownPostRequest(cuid) {
+  return (dispatch) => {
+    return callApi(`posts/${cuid}`, 'thumbDown').then(() => dispatch(thumbDown(cuid)));
   };
 }
 

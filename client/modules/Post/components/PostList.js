@@ -13,6 +13,8 @@ function PostList(props) {
             post={post}
             key={post.cuid}
             onDelete={() => props.handleDeletePost(post.cuid)}
+            onThumbUp={() => props.handlethumbUpPost(post.cuid)}
+            onThumbDown={() => props.handlethumbDownPost(post.cuid)}
           />
         ))
       }
@@ -29,6 +31,8 @@ PostList.propTypes = {
     cuid: PropTypes.string.isRequired,
   })).isRequired,
   handleDeletePost: PropTypes.func.isRequired,
+  handlethumbUpPost: PropTypes.func.isRequired,
+  handlethumbDownPost: PropTypes.func.isRequired,
 };
 
 export default PostList;
