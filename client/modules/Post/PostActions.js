@@ -51,6 +51,7 @@ export function thumbUp(cuid) {
   return {
     type: THUMB_UP,
     cuid,
+    post,
   };
 }
 
@@ -58,6 +59,7 @@ export function thumbDown(cuid) {
   return {
     type: THUMB_DOWN,
     cuid,
+    post,
   };
 }
 

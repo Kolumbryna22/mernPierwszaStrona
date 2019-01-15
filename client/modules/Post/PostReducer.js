@@ -22,12 +22,12 @@ const PostReducer = (state = initialState, action) => {
 
     case THUMB_UP :
       return {
-        data: state.data.map(post => { return post.cuid === action.cuid ? post.vote++ : post }),
+        data: state.data.find(post => post.cuid === action.cuid).votes++,
       };
 
     case THUMB_DOWN :
       return {
-        data: state.data.map(post => { return post.cuid === action.cuid ? post.vote-- : post }),
+        data: state.data.find(post => post.cuid === action.cuid).votes--,
       };
 
     case DELETE_POST :
